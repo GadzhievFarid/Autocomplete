@@ -1,0 +1,53 @@
+body {
+	font: 14px “Segoe UI”; 
+	color: #404040;
+	line-height: 20px;   
+}
+md-autocomplete input:not(.md-input):focus{
+	border-style: solid;
+	border-color: #6296f1;
+	border-width: 1px;
+}
+
+md-autocomplete input:not(.md-input):focus {
+	opacity: 0.5; transition: opacity 0.2s ease;
+}
+
+md-autocomplete input:not(.md-input):focus::-moz-placeholder {
+	opacity: 0.5; transition: opacity 0.2s ease;
+}
+
+md-autocomplete input:not(.md-input):focus:-moz-placeholder {
+	opacity: 0.5; transition: opacity 0.2s ease;
+}
+
+md-autocomplete input:not(.md-input):focus::-ms-input-placeholder {
+	opacity: 0.5; transition: opacity 0.2s ease;
+}
+
+md-input-container.md-input-focused .md-input, md-input-container.md-input-resized .md-input, md-input-container .md-input.ng-invalid.ng-dirty{
+	border-width: 2px;
+}
+
+md-input-container .md-input {
+	border-width: 2px;
+}
+
+.md-autocomplete-suggestions-container.md-default-theme li:hover, .md-autocomplete-suggestions-container 
+li:hover, .md-autocomplete-suggestions-container.md-default-theme li.selected, .md-autocomplete-suggestions-container li.selected{
+	background: #5199db;
+	color: white !important;
+}
+
+.autocompleteClass{
+	width: 450px;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+md-input-container label:not(.md-container-ignore) {
+    position: static; 
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app = "cities">
+
+	<head>
+		<title>Autocomplete</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+  		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+	  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+	  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+	  	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.js"></script>
+	  	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.js"></script>
+	  	<script src = "autocomplete.js"></script>
+  	</head>
+
+  	<body>
+		<div ng-controller="CityCtrl as ctrl" ng-cloak class="autocompleteClass">
+			<md-content class="md-padding">
+			    <form ng-submit="$event.preventDefault()" name="searchForm">
+			    	<div>
+				        <md-autocomplete flex required = "true" md-no-asterisk md-escape-options="nothing" md-input-name="autocompleteField" ng-model = "autocompleteField" md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText" md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.City" md-require-match=""  md-autofocus="" md-select-on-focus="" md-autoselect=""  md-dropdown-items = "20" md-floating-label="Выберите город" md-clear-button = "false">		
+				          <md-item-template>
+				            <span >{{item.City}}</span>
+				          </md-item-template>
+				          
+				            <md-not-found> <div style="opacity: 0.5;"> Не найдено </div> </md-not-found>
+				          	<div ng-messages="searchForm.autocompleteField.$error" ng-show="searchForm.autocompleteField.$touched">
+			              		<div ng-message="required">Выберите значение из списка</div>
+			              		<div ng-message="md-require-match">Выберите значение из списка</div>
+			        	  	</div>
+				        </md-autocomplete>
+					</div> 
+			  	</form>
+		  	</md-content>
+		</div>
+	</body>
+</html>
